@@ -1,0 +1,9 @@
+setup.cfg
+.pypirc
+*.pyc
+build/
+kaching.egg-info/
+dist/
+*.kate-swp
+key.py
+TODO.txt
