@@ -1,10 +1,24 @@
 Kaching
 =======
 
-Pass and fail sounds for test driven development.
+Pass, fail and trigger sounds for test driven development.
 
-$ kaching pass
-[ pass sound ]
+To install::
 
-$ kaching fail
-[ failure sound ]
+    apt-get install mplayer (or equivalent)
+    sudo pip install kaching
+
+Use::
+
+    $ kaching pass
+    [ pass sound ]
+
+    $ kaching fail
+    [ failure sound ]
+
+    $ kaching start
+    [ starting sound ]
+
+Kaching requires mplayer to be installed to run.
+
+Sounds taken from : http://soundfxnow.com/
