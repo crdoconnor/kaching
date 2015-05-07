@@ -3,8 +3,6 @@ import IPython
 import sys
 import random
 
-__version__ = "0.2"
-
 PASS_DIR = os.path.dirname(os.path.realpath(__file__)) + os.sep + "pass"
 FAIL_DIR = os.path.dirname(os.path.realpath(__file__)) + os.sep + "fail"
 START_DIR = os.path.dirname(os.path.realpath(__file__)) + os.sep + "start"
