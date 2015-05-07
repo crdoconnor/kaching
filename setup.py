@@ -35,6 +35,6 @@ setup(name="kaching",
       entry_points=dict(console_scripts=['kaching=kaching:run',]),
       license='MIT',
       package=['kaching'],
-      package_data={'kaching': ['pass/*.mp3', 'fail/*.mp3',]},
+      package_data={'kaching': ['pass/*.mp3', 'fail/*.mp3', 'start/*.mp3', ]},
       zip_safe=False,
 )
