@@ -1,25 +1,43 @@
-import os
-import sys
-import random
+from os.path import join, dirname, realpath
+from sys import stderr, argv, exit
+from subprocess import Popen, PIPE
+from random import randint
+from os import listdir
 
-PASS_DIR = os.path.dirname(os.path.realpath(__file__)) + os.sep + "pass"
-FAIL_DIR = os.path.dirname(os.path.realpath(__file__)) + os.sep + "fail"
-START_DIR = os.path.dirname(os.path.realpath(__file__)) + os.sep + "start"
+
+PASS_DIR = join(dirname(realpath(__file__)), "pass")
+FAIL_DIR = join(dirname(realpath(__file__)), "fail")
+START_DIR = join(dirname(realpath(__file__)), "start")
+
+
+def play_sound_file(sound_file):
+    """Play specified sound file or raise error if mplayer doesn't work."""
+    try:
+        Popen(["mplayer", "-msglevel", "all=-1", sound_file], stdout=PIPE, stderr=PIPE)
+    except OSError:
+        stderr.write("Couldn't run mplayer. Do you have it installed?\n")
+        exit(1)
+
+def print_usage():
+    """Print CLI usage."""
+    stderr.write("Usage: kaching [pass | fail | start]\n")
+    exit(1)
+
 
 def run():
-    wins = os.listdir(PASS_DIR)
-    fails = os.listdir(FAIL_DIR)
-    starts = os.listdir(START_DIR)
+    """Run kaching."""
+    wins = listdir(PASS_DIR)
+    fails = listdir(FAIL_DIR)
+    starts = listdir(START_DIR)
 
-    if sys.argv[1] == "pass":
-        sound = PASS_DIR + os.sep + wins[random.randint(0, len(wins) - 1)]
-        os.system("mplayer -msglevel all=-1 {} > /dev/null 2>&1 &".format(sound))
-    elif sys.argv[1] == "fail":
-        sound = FAIL_DIR + os.sep + fails[random.randint(0, len(fails) - 1)]
-        os.system("mplayer -msglevel all=-1 {} > /dev/null 2>&1 &".format(sound))
-    elif sys.argv[1] == "start":
-        sound = START_DIR + os.sep + starts[random.randint(0, len(starts) - 1)]
-        os.system("mplayer -msglevel all=-1 {} > /dev/null 2>&1 &".format(sound))
+    if len(argv) == 2:
+        if argv[1] == "pass":
+            play_sound_file(join(PASS_DIR, wins[randint(0, len(wins) - 1)]))
+        elif argv[1] == "fail":
+            play_sound_file(join(FAIL_DIR, fails[randint(0, len(fails) - 1)]))
+        elif argv[1] == "start":
+            play_sound_file(join(START_DIR, starts[randint(0, len(starts) - 1)]))
+        else:
+            print_usage()
     else:
-        print "Usage: kaching [pass | fail | start]"
-
+        print_usage()
