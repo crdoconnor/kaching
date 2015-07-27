@@ -1,7 +1,10 @@
 Kaching
 =======
 
-Pass, fail and trigger sounds for test driven development.
+Pass, fail and trigger sounds for test driven development. Intended for use when refactoring with tests
+run with patrol.
+
+Hit the save button on your text editor -> test run (kaching start sound) -> test pass/failure.
 
 To install::
 
