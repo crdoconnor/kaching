@@ -2,9 +2,10 @@ Kaching
 =======
 
 Pass, fail and trigger sounds for test driven development. Intended for use when refactoring with tests
-run with patrol.
+run with `patrol`_. Makes refactoring feel more like playing a computer game and helps keep your focus
+on refactoring rather than running tests.
 
-Hit the save button on your text editor -> test run (kaching start sound) -> test pass/failure.
+Hit the save button on your text editor -> test run (kaching start sound) -> test pass/failure -> pass/failure sound.
 
 To install::
 
@@ -25,3 +26,5 @@ Use::
 Kaching requires mplayer to be installed to run.
 
 Sounds taken from : http://soundfxnow.com/
+
+.. _patrol: https://github.com/crdoconnor/patrol
