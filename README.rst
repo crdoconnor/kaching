@@ -1,30 +1,38 @@
 Kaching
 =======
 
-Pass, fail and trigger sounds for test driven development. Intended for use when refactoring with tests
-run with `patrol`_. Makes refactoring feel more like playing a computer game and helps keep your focus
-on refactoring rather than running tests.
+Pass, fail and trigger sounds for test driven development.
 
-Hit the save button on your text editor -> test run (kaching start sound) -> test pass/failure -> pass/failure sound.
+Intended for use when refactoring with tests to give you auditory feedback about passes, failures and triggered test runs.
 
 To install::
 
-    apt-get install mplayer (or equivalent)
-    sudo pip install kaching
+    $ apt-get install mplayer (or equivalent)
+    $ pip install kaching
 
-Use::
-
-    $ kaching pass
-    [ pass sound ]
-
-    $ kaching fail
-    [ failure sound ]
+Command line use::
 
     $ kaching start
     [ starting sound ]
+    
+    $ kaching fail
+    [ failure sound ]
 
-Kaching requires mplayer to be installed to run.
+    $ kaching win
+    [ passing test sound ]
+    
+Python API use::
+
+    >>> import kaching
+    >>> kaching.start()
+    [ starting sound ]
+    
+    >>> kaching.fail()
+    [ failure sound ]
+    
+    >>> kaching.win()
+    [ passing test sound ]
+
+Kaching requires mplayer to be installed to make a sound although it won't raise an exception / exit with status code > 0 if it isn't.
 
 Sounds taken from : http://soundfxnow.com/
-
-.. _patrol: https://github.com/crdoconnor/patrol
