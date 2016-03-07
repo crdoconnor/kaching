@@ -12,7 +12,7 @@ def read(*parts):
     return codecs.open(os.path.join(os.path.abspath(os.path.dirname(__file__)), *parts), 'r').read()
 
 setup(name="kaching",
-      version="0.3",
+      version=read('VERSION').replace('\n', ''),
       description="Notification sounds for test pass and failure.",
       long_description=read('README.rst'),
       classifiers=[
