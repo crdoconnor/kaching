@@ -1,38 +1,45 @@
-Kaching
-=======
+# Kaching
 
-Pass, fail and trigger sounds for test driven development.
+Sound effects for making test driven development a bit more fun.
 
-Intended for use when refactoring with tests to give you auditory feedback about passes, failures and triggered test runs.
+Kaching plays a variety of sounds from computer games to signify the
+beginning of a test run, a failure and a success.
 
-To install::
+To install:
 
-    $ apt-get install mplayer (or equivalent)
-    $ pip install kaching
+```bash
+$ apt-get install mplayer (or equivalent)
+$ pip install kaching
+```
 
-Command line use::
+Command line use:
 
-    $ kaching start
-    [ starting sound ]
-    
-    $ kaching fail
-    [ failure sound ]
+```bash
+$ kaching start
+[ starting sound ]
 
-    $ kaching win
-    [ passing test sound ]
-    
+$ kaching fail
+[ failure sound ]
+
+$ kaching win
+[ passing test sound ]
+```
+
 Python API use::
 
-    >>> import kaching
-    >>> kaching.start()
-    [ starting sound ]
-    
-    >>> kaching.fail()
-    [ failure sound ]
-    
-    >>> kaching.win()
-    [ passing test sound ]
+```python
+>>> import kaching
+>>> kaching.start()
+[ starting sound ]
 
-Kaching requires mplayer to be installed to make a sound although it won't raise an exception / exit with status code > 0 if it isn't.
+>>> kaching.fail()
+[ failure sound ]
+
+>>> kaching.win()
+[ passing test sound ]
+```
+
+Kaching requires mpg123 to be installed to make a sound although it won't
+raise an exception / exit with status code > 0 if it isn't.
 
 Sounds taken from : http://soundfxnow.com/
