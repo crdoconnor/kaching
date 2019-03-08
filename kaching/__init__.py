@@ -4,7 +4,7 @@ def _play_sound_file(sound_file):
     from sys import stderr, exit
 
     try:
-        Popen(["mpg123", sound_file], stdout=PIPE, stderr=PIPE)
+        Popen(["mpg123", sound_file], stdout=PIPE, stderr=PIPE).communicate()
     except OSError:
         stderr.write("Couldn't run mpg123. Do you have it installed?\n")
         exit(1)
