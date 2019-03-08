@@ -7,3 +7,5 @@ dist/
 *.kate-swp
 key.py
 TODO.txt
+hitch/gen
+hitch/__pycache__
