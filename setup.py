@@ -13,8 +13,9 @@ def read(*parts):
 
 setup(name="kaching",
     version=read('VERSION').replace('\n', ''),
-    description="Notification sounds for test pass and failure.",
-    long_description=read('README.rst'),
+    description="Sound effects for test driven development.",
+    long_description=read('README.md'),
+    long_description_content_type="text/markdown",
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
